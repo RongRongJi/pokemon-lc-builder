@@ -1,0 +1,87 @@
+name: Build & Release APK
+
+# 打 tag (v*) 时自动构建 Android APK 并创建 GitHub Release
+# 也可以在 Actions 页面手动触发（workflow_dispatch）
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version_tag:
+        description: 'Release tag (e.g., v1.0.0)'
+        required: false
+        default: 'latest'
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Node.js (for Capacitor sync check)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
+
+      - name: Build Release APK
+        working-directory: android
+        run: ./gradlew assembleRelease --no-daemon --stacktrace
+
+      - name: Rename APK with version tag
+        run: |
+          TAG=${{ github.event.inputs.version_tag || github.ref_name }}
+          APK_DIR="android/app/build/outputs/apk/release"
+          APK_FILE=$(ls $APK_DIR/*.apk 2>/dev/null | head -1)
+          if [ -z "$APK_FILE" ]; then
+            echo "APK not found, trying debug..."
+            APK_DIR="android/app/build/outputs/apk/debug"
+            APK_FILE=$(ls $APK_DIR/*.apk 2>/dev/null | head -1)
+          fi
+          echo "Found APK: $APK_FILE"
+          cp "$APK_FILE" "lc-builder-$TAG.apk"
+          echo "APK_PATH=lc-builder-$TAG.apk" >> $GITHUB_ENV
+
+      - name: Build debug APK as fallback
+        if: success()
+        working-directory: android
+        run: |
+          if [ ! -f "../$APK_PATH" ]; then
+            ./gradlew assembleDebug --no-daemon
+          fi
+
+      - name: Create Release & Upload APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.version_tag || github.ref_name }}
+          name: LC Builder ${{ github.event.inputs.version_tag || github.ref_name }}
+          body: |
+            ## LC Builder Android App
+
+            **APK 下载**: 点击下方 `lc-builder-*.apk`
+
+            安装说明：
+            - Android 设置 → 允许"未知来源应用"
+            - 在手机文件管理器中点击 APK 进行安装
+
+            前端站点：https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          files: |
+            ${{ env.APK_PATH }}
+          draft: false
+          prerelease: false

@@ -1,0 +1,199 @@
+# Smogon BW LC Pokemon List
+# Crawled from https://www.smogon.com/dex/bw/formats/lc/
+
+# A
+Abra
+Aipom
+Anorith
+Archen
+Aron
+Axew
+Azurill
+
+# B
+Bagon
+Baltoy
+Barboach
+Bellsprout
+Bidoof
+Blitzle
+Bonsly
+Bronzor
+Budew
+Buizel
+Bulbasaur
+Buneary
+
+# C
+Cacnea
+Carvanha
+Charmander
+Cherubi
+Chikorita
+Chimchar
+Chinchou
+Chingling
+Clamperl
+Cleffa
+Corphish
+Cottonee
+Cranidos
+Croagunk
+Cubchoo
+Cubone
+Cyndaquil
+
+# D
+Darumaka
+Deerling
+Deino
+Diglett
+Doduo
+Dratini
+Drifloon
+Drilbur
+Drowzee
+Ducklett
+Duskull
+
+# E
+Eevee
+Ekans
+Electrike
+Elekid
+Exeggcute
+
+# F
+Ferroseed
+Finneon
+Foongus
+Frillish
+
+# G
+Gastly
+Gible
+Golett
+Gothita
+
+# H
+Hippopotas
+Horsea
+
+# I
+Igglybuff
+Ivysaur
+
+# J
+Jigglypuff
+
+# K
+Kabuto
+Karrablast
+Koffing
+
+# L
+Larvesta
+Litwick
+Lotad
+
+# M
+Machop
+Magnemite
+Makuhita
+Marill
+Mareep
+Meowth
+Mienfoo
+Minccino
+Munna
+Murkrow
+
+# N
+Natu
+NidoranF
+NidoranM
+Nosepass
+
+# O
+Oddish
+Omanyte
+Onix
+Oshawott
+
+# P
+Pachirisu
+Panpour
+Pansage
+Pansear
+Paras
+Patrat
+Pawniard
+Petilil
+Pidgey
+Pikachu
+Piplup
+Plusle
+Poliwag
+Ponyta
+Porygon
+Purrloin
+
+# Q
+Quagsire
+
+# R
+Ralts
+Rattata
+Roggenrola
+Rotom
+
+# S
+Sandile
+Sawk
+Sewaddle
+Shellder
+Shelmet
+Shroomish
+Slowpoke
+Snivy
+Solosis
+Spearow
+Spheal
+Spinarak
+Starly
+Stunky
+Sunkern
+Surskit
+Swablu
+Swinub
+
+# T
+Teddiursa
+Tentacool
+Timburr
+Tirtouga
+Togepi
+Torchic
+Totodile
+Trapinch
+Treecko
+Trubbish
+Turtwig
+Tynamo
+Tyrogue
+
+# V
+Vanillite
+Vullaby
+
+# W
+Whismur
+Woobat
+
+# Y
+Yamask
+
+# Z
+Zorua
+
+# Total: 134 Pokemon
