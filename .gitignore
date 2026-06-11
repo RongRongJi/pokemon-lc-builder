@@ -24,7 +24,9 @@ android/.idea
 android/.settings
 android/app/.classpath
 android/app/.project
+# 忽略所有 APK，但允许仓库根目录下的 release.apk（用于 GitHub Release 上传）
 *.apk
+!release.apk
 *.aab
 *.keystore
 !android/app/lcbuilder-release.keystore
