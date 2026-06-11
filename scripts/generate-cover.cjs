@@ -453,15 +453,17 @@ const resizedLogo = resizeBilinear(logo.pixels, logo.width, logo.height, logoDis
 
 // Logo 居中偏上
 const logoCenterX = CW / 2;
-const logoCenterY = CH * 0.38;
+const logoCenterY = CH * 0.35;
 blend(cover, CW, CH, resizedLogo, logoDisplayW, logoDisplayH, logoCenterX, logoCenterY);
 
 // 仅一行大文字：LITTLE CUP POKEMON TEAM BUILDER
-const mainScale = 10;
+// 31 chars: total width = 185 * scale. 1200/185 ≈ 6.5 → scale=6 → 1110 px
+const mainScale = 6;
 const mainText = 'LITTLE CUP POKEMON TEAM BUILDER';
 const mainTextW = mainText.length * (5 + 1) * mainScale;
 const mainX = Math.round(CW / 2 - mainTextW / 2);
-const mainY = Math.round(logoCenterY + logoDisplayH / 2 + 50);
+const mainY = Math.round(logoCenterY + logoDisplayH / 2 + 40);
+console.log(`  Text: ${mainText} chars, scale=${mainScale}, width=${mainTextW}px, x=${mainX}`);
 drawText(cover, CW, CH, mainText, mainX, mainY, mainScale, [255, 255, 255, 255]);
 
 // 保存
