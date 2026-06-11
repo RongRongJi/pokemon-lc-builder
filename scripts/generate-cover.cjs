@@ -437,8 +437,7 @@ function drawDiskOutline(pixels, w, h, cx, cy, r, color) {
 drawDiskOutline(cover, CW, CH, 150, 120, 180, accentColor);
 drawDiskOutline(cover, CW, CH, 1050, 500, 220, accentColor);
 
-// 居中放置 logo：缩放 logo 到合适大小（logo 短边占 40%）
-// 选择 logo 大小：希望 logo 主体尺寸约为 320×320（不超过高度的一半）
+// 居中放置 logo
 const targetSize = 320;
 let logoDisplayW, logoDisplayH;
 if (logo.width >= logo.height) {
@@ -449,48 +448,21 @@ if (logo.width >= logo.height) {
   logoDisplayH = Math.round(logo.height * (targetSize / logo.width));
 }
 
-// 确保不超过画面
-const maxW = CW * 0.5;
-const maxH = CH * 0.55;
-if (logoDisplayW > maxW) {
-  const scale = maxW / logoDisplayW;
-  logoDisplayW = Math.round(logoDisplayW * scale);
-  logoDisplayH = Math.round(logoDisplayH * scale);
-}
-if (logoDisplayH > maxH) {
-  const scale = maxH / logoDisplayH;
-  logoDisplayW = Math.round(logoDisplayW * scale);
-  logoDisplayH = Math.round(logoDisplayH * scale);
-}
-
 console.log(`  Resizing logo to ${logoDisplayW} x ${logoDisplayH}...`);
 const resizedLogo = resizeBilinear(logo.pixels, logo.width, logo.height, logoDisplayW, logoDisplayH);
 
-// 把 logo 放在画面上方偏中间的位置
+// Logo 居中偏上
 const logoCenterX = CW / 2;
-const logoCenterY = CH * 0.4;
+const logoCenterY = CH * 0.38;
 blend(cover, CW, CH, resizedLogo, logoDisplayW, logoDisplayH, logoCenterX, logoCenterY);
 
-// 绘制标题文字（在 logo 下方）
-// 使用大像素字体（每个像素 12px，字符 5×7 = 60×84）
-const bigScale = 12;
-const titleY = Math.round(logoCenterY + logoDisplayH / 2 + 40);
-const titleText = 'LC BUILDER';
-drawText(cover, CW, CH, titleText, CW / 2 - (titleText.length * (5 + 1) * bigScale) / 2,
-         titleY, bigScale, [255, 255, 255, 255]);
-
-// 绘制副标题（较小）
-const smallScale = 6;
-const subY = titleY + 7 * bigScale + 30;
-const subText = 'LITTLE CUP POKEMON TEAM BUILDER';
-drawText(cover, CW, CH, subText, CW / 2 - (subText.length * (5 + 1) * smallScale) / 2,
-         subY, smallScale, [180, 200, 240, 255]);
-
-// 右下角小字
-const tinyScale = 4;
-const footerText = '215 POKEMON · 800+ SETS · EN/ZH';
-drawText(cover, CW, CH, footerText, CW / 2 - (footerText.length * (5 + 1) * tinyScale) / 2,
-         CH - 7 * tinyScale - 30, tinyScale, [140, 160, 200, 255]);
+// 仅一行大文字：LITTLE CUP POKEMON TEAM BUILDER
+const mainScale = 10;
+const mainText = 'LITTLE CUP POKEMON TEAM BUILDER';
+const mainTextW = mainText.length * (5 + 1) * mainScale;
+const mainX = Math.round(CW / 2 - mainTextW / 2);
+const mainY = Math.round(logoCenterY + logoDisplayH / 2 + 50);
+drawText(cover, CW, CH, mainText, mainX, mainY, mainScale, [255, 255, 255, 255]);
 
 // 保存
 console.log('Encoding cover PNG...');
