@@ -15606,6 +15606,136 @@ export const smogonSets: SmogonSet[] = [
   },
   {
     "pokemonName": {
+      "en": "Scraggy",
+      "cn": "滑头小子"
+    },
+    "setName": "[BW] Bulk Up",
+    "description": "Bulk Up turns Scraggy into a potential sweeping demon, boosting its initially lackluster Attack stat and decent Defense to alarming levels. Drain Punch is the go-to Fighting-type STAB move, as it provides a secondary source of recovery while having decent damage output once boosted. Crunch is Scraggy's Dark-type STAB move of choice, boasting decent damage output and a way of hitting Fighting resistances at least neutrally. Rest gives it the longevity it needs to accumulate Bulk Up boosts.",
+    "item": "Eviolite",
+    "ability": "Shed Skin",
+    "nature": "Careful",
+    "level": 5,
+    "evs": {
+      "hp": 252,
+      "atk": 0,
+      "def": 0,
+      "spAtk": 0,
+      "spDef": 236,
+      "spd": 20
+    },
+    "moves": [
+      "Bulk Up",
+      "Drain Punch",
+      "Crunch",
+      "Rest"
+    ]
+  },
+  {
+    "pokemonName": {
+      "en": "Scraggy",
+      "cn": "滑头小子"
+    },
+    "setName": "[XY] Choice Scarf",
+    "description": "High Jump Kick is an extremely powerful Fighting-type STAB move that lets Scraggy hit hard. Knock Off is a far more reliable Dark-type STAB move and removes foes' items. Drain Punch provides recovery and is a safer Fighting STAB. Zen Headbutt hits Poison- and Fighting-types that might switch in.",
+    "item": "Choice Scarf",
+    "ability": "Moxie",
+    "nature": "Jolly",
+    "level": 5,
+    "evs": {
+      "hp": 36,
+      "atk": 236,
+      "def": 0,
+      "spAtk": 0,
+      "spDef": 0,
+      "spd": 212
+    },
+    "moves": [
+      "High Jump Kick",
+      "Knock Off",
+      "Drain Punch",
+      "Zen Headbutt / Poison Jab"
+    ]
+  },
+  {
+    "pokemonName": {
+      "en": "Scraggy",
+      "cn": "滑头小子"
+    },
+    "setName": "[XY] Dragon Dance",
+    "description": "With Dragon Dance, Scraggy becomes a threatening sweeper able to boost its Attack and Speed in a single turn. High Jump Kick is an extremely powerful STAB move after boosts. Knock Off is a more reliable Dark-type STAB and removes items. Zen Headbutt hits Poison- and Fighting-types. Poison Jab can be run instead to hit Fairy-types.",
+    "item": "Eviolite",
+    "ability": "Moxie",
+    "nature": "Jolly",
+    "level": 5,
+    "evs": {
+      "hp": 36,
+      "atk": 156,
+      "def": 36,
+      "spAtk": 0,
+      "spDef": 36,
+      "spd": 212
+    },
+    "moves": [
+      "Dragon Dance",
+      "High Jump Kick",
+      "Knock Off",
+      "Zen Headbutt / Poison Jab"
+    ]
+  },
+  {
+    "pokemonName": {
+      "en": "Scraggy",
+      "cn": "滑头小子"
+    },
+    "setName": "[SM] Dragon Dance Sweeper",
+    "description": "With Dragon Dance, Scraggy becomes a threatening sweeper, able to boost its Attack and Speed to dangerous levels in a single turn. High Jump Kick is an extremely powerful STAB move that Scraggy can use after a boost to break down teams. Drain Punch provides recovery and safer Fighting-type STAB. Knock Off is a powerful STAB move with the added utility of removing foes' items. Zen Headbutt hits Poison- and Fighting-types. Poison Jab hits Fairy-types.",
+    "item": "Eviolite",
+    "ability": "Shed Skin",
+    "nature": "Jolly",
+    "level": 5,
+    "evs": {
+      "hp": 36,
+      "atk": 156,
+      "def": 36,
+      "spAtk": 0,
+      "spDef": 36,
+      "spd": 212
+    },
+    "moves": [
+      "Dragon Dance",
+      "High Jump Kick / Drain Punch",
+      "Knock Off",
+      "Zen Headbutt / Poison Jab"
+    ]
+  },
+  {
+    "pokemonName": {
+      "en": "Scraggy",
+      "cn": "滑头小子"
+    },
+    "setName": "[SM] Choice Scarf",
+    "description": "High Jump Kick is an extremely powerful Fighting-type STAB move. Knock Off is a reliable Dark-type STAB and removes foes' items. Poison Jab is Scraggy's most generally useful coverage move, hitting Fairy-types that resist its STAB combination. Drain Punch is an alternate STAB move when High Jump Kick is not necessary. Zen Headbutt hits Pokemon such as Croagunk and Foongus.",
+    "item": "Choice Scarf",
+    "ability": "Moxie",
+    "nature": "Jolly",
+    "level": 5,
+    "evs": {
+      "hp": 36,
+      "atk": 236,
+      "def": 0,
+      "spAtk": 0,
+      "spDef": 0,
+      "spd": 212
+    },
+    "moves": [
+      "High Jump Kick",
+      "Knock Off",
+      "Poison Jab",
+      "Drain Punch / Zen Headbutt"
+    ]
+  },
+  {
+    "pokemonName": {
       "en": "Seedot",
       "cn": "橡实果"
     },

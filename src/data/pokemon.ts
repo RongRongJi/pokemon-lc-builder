@@ -130,6 +130,7 @@ export const POKEMON: Pokemon[] = [
   { id: 627, name: { cn: '毛头小鹰', en: 'Rufflet' }, baseStats: { hp: 70, atk: 83, def: 50, spAtk: 37, spDef: 50, spd: 60 }, types: ['normal', 'flying'], abilities: ['Keen Eye', 'Sheer Force', 'Hustle'] },
   { id: 551, name: { cn: '黑眼鳄', en: 'Sandile' }, baseStats: { hp: 50, atk: 72, def: 35, spAtk: 35, spDef: 35, spd: 65 }, types: ['ground', 'dark'], abilities: ['Intimidate', 'Moxie', 'Anger Point'] },
   { id: 27, name: { cn: '穿山鼠', en: 'Sandshrew' }, baseStats: { hp: 50, atk: 75, def: 85, spAtk: 20, spDef: 30, spd: 40 }, types: ['ground'], abilities: ['Sand Veil', 'Sand Rush'] },
+  { id: 559, name: { cn: '滑头小子', en: 'Scraggy' }, baseStats: { hp: 50, atk: 75, def: 70, spAtk: 35, spDef: 70, spd: 48 }, types: ['dark', 'fighting'], abilities: ['Shed Skin', 'Moxie', 'Intimidate'] },
   { id: 273, name: { cn: '橡实果', en: 'Seedot' }, baseStats: { hp: 40, atk: 40, def: 50, spAtk: 30, spDef: 30, spd: 30 }, types: ['grass'], abilities: ['Chlorophyll', 'Early Bird', 'Pickpocket'] },
   { id: 86, name: { cn: '小海狮', en: 'Seel' }, baseStats: { hp: 65, atk: 45, def: 55, spAtk: 45, spDef: 70, spd: 45 }, types: ['water'], abilities: ['Thick Fat', 'Hydration', 'Ice Body'] },
   { id: 161, name: { cn: '尾立', en: 'Sentret' }, baseStats: { hp: 35, atk: 46, def: 34, spAtk: 35, spDef: 45, spd: 20 }, types: ['normal'], abilities: ['Run Away', 'Keen Eye', 'Frisk'] },
