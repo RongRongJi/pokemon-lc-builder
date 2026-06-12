@@ -102,13 +102,14 @@ export default function Home() {
       return { ...member, ivs: mIvs, evs: mEvs };
     });
     const paste = teamForPaste.map(member => {
-      const { pokemon, nature, ability, moves, ivs: mIvs, evs: mEvs, level: mLvl } = member;
-      let p = `${pokemon.name.en} @ Eviolite\n`;
+      const { pokemon, nature, ability, moves, ivs: mIvs, evs: mEvs, level: mLvl, item } = member;
+      const itemName = (item && item !== '-') ? item : 'Eviolite';
+      let p = `${pokemon.name.en} @ ${itemName}\n`;
       p += `Ability: ${ability}\n`;
       p += `Level: ${mLvl}\n`;
-      p += `Nature: ${nature.name.en}\n`;
       p += `IVs: ${mIvs.hp} HP / ${mIvs.atk} Atk / ${mIvs.def} Def / ${mIvs.spAtk} SpA / ${mIvs.spDef} SpD / ${mIvs.spd} Spe\n`;
       p += `EVs: ${mEvs.hp} HP / ${mEvs.atk} Atk / ${mEvs.def} Def / ${mEvs.spAtk} SpA / ${mEvs.spDef} SpD / ${mEvs.spd} Spe\n`;
+      p += `${nature.name.en} Nature\n`;
       for (let i = 0; i < Math.min(moves.length, 4); i++) p += `- ${moves[i]}\n`;
       return p;
     }).join('\n');
